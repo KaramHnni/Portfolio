@@ -13,6 +13,13 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve :`gatsby-plugin-postcss`,
+      options : {
+          postCssPlugins : [require('tailwindcss')]
+      }
+ 
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
