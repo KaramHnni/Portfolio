@@ -6,15 +6,38 @@ module.exports = {
   },
   plugins: [
   
-    `gatsby-transformer-remark`,
+  {
+    resolve: `gatsby-transformer-remark`,
+    options: {
+      plugins: [
+        `gatsby-remark-relative-images`,
+        {
+          resolve: `gatsby-remark-images`,
+          options: {
+            maxWidth: 800,
+            linkImagesToOriginal: false,
+            sizeByPixelDensity: true,
+            showCaptions: true
+          }
+        },
+      ]
+    }
+  },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/`,
+        path: `${__dirname}/src`,
       },
     },
+  {
+    resolve: `gatsby-source-filesystem`,
+    options: {
+      name: `images`,
+      path: `${__dirname}/src/images`,
+    },
+  },
     {
       resolve :`gatsby-plugin-postcss`,
       options : {

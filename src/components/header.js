@@ -12,19 +12,20 @@ const Header = ({ siteTitle }) => (
 					className="py-2 m-0 flex justify-end items-center list-none relative ml-auto"
 				>
 					<li className="px-4 font-bold ">
-						<a className="text-teal-600" href="#">
+						<Link className="text-teal-600" to="/">
 							Home
-						</a>
+						</Link>
+						
 					</li>
 					<li className="px-4 font-bold NavLink">
-						<a className="text-teal-600" href="#">
+					<Link className="text-teal-600" to="/Projects">
 							Work
-						</a>
+						</Link>
 					</li>
 					<li className="px-4 font-bold NavLink">
-						<a className="text-teal-600" href="#">
+					<Link className="text-teal-600" to="/Contact">
 							Contact
-						</a>
+					</Link>
 					</li>
 				</ul>
 			)}

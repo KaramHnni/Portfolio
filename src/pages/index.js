@@ -4,7 +4,7 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 import ProjectCard from "../components/ProjectCard"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql ,Link} from "gatsby"
 import Img from "gatsby-image"
 import { ArrowDownOutlined } from "@ant-design/icons"
 
@@ -95,7 +95,7 @@ const IndexPage = () => {
             />
             <ProjectCard
               ProjectData={{
-                title: `TipTop CRM `,
+                title: `Tip Top Automobiles CRM `,
                 description: `A CRM dedicated to car selling agencies`,
               }}
               imageData={{
@@ -113,9 +113,9 @@ const IndexPage = () => {
           </div>
 
           <div className="text-center mt-2">
-            <a href="#" className="block text-black text-lg text-center">
+            <Link to="/Projects" className="block text-black text-lg text-center">
               -- Browse more projects --{" "}
-            </a>
+            </Link>
           </div>
         </div>
       </div>
