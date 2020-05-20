@@ -11,23 +11,17 @@ import { ArrowDownOutlined } from "@ant-design/icons"
 const IndexPage = () => {
   const imgData = useStaticQuery(graphql`
     query Images {
-      ImageTipTop: file(relativePath: { eq: "TiptopShowCase.png" }) {
-        id
-        childImageSharp {
-          fixed {
-            src
-          }
-        }
-      }
-      ImageKBL: file(relativePath: { eq: "KblShowCase.png" }) {
-        id
-        childImageSharp {
-          fixed {
-            src
-          }
-        }
-      }
+ ImageKBL:  imageSharp(fixed: {originalName: {eq: "KblShowCase.png"}}) {
+    fixed {
+      src
     }
+  }
+  ImageTipTop:  imageSharp(fixed: {originalName: {eq: "TiptopShowCase.png"}}) {
+    fixed {
+      src
+    }
+  }
+}
   `)
 
   return (
@@ -90,7 +84,7 @@ const IndexPage = () => {
               }}
               imageData={{
                 alt: `example`,
-                path: `${imgData.ImageKBL.childImageSharp.fixed.src}`,
+                path: `${imgData.ImageKBL.fixed.src}`,
               }}
               Tags={[
                 { name: "Laravel", color: "red" },
@@ -106,7 +100,7 @@ const IndexPage = () => {
               }}
               imageData={{
                 alt: `example`,
-                path: `${imgData.ImageTipTop.childImageSharp.fixed.src}`,
+                path: `${imgData.ImageTipTop.fixed.src}`,
               }}
               Tags={[
                 { name: "Laravel", color: "red" },

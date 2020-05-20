@@ -4,7 +4,6 @@ import { Card, Avatar, Tag } from "antd"
 const { Meta } = Card
 
 const ProjectCard = ({ imageData, ProjectData, Tags }) => {
-	console.log(Tags)
 	return (
 		<Card
 			style={{ width: 400 }}
