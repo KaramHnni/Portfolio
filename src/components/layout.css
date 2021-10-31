@@ -616,6 +616,23 @@ pre tt:before,
 pre tt:after {
   content: "";
 }
+
+.bounce {
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
+
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;

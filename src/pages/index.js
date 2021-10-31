@@ -1,5 +1,6 @@
 import React from "react"
 import { Motion, spring } from "react-motion"
+import {scroller,Link as ScrollLink} from 'react-scroll'
 import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
@@ -7,8 +8,13 @@ import ProjectCard from "../components/ProjectCard"
 import { useStaticQuery, graphql ,Link} from "gatsby"
 import Img from "gatsby-image"
 import { ArrowDownOutlined } from "@ant-design/icons"
+import {Trans, useTranslation} from 'gatsby-plugin-react-i18next';
 
 const IndexPage = () => {
+
+  const { t } = useTranslation();
+
+
   const imgData = useStaticQuery(graphql`
     query Images {
  ImageKBL:  imageSharp(fixed: {originalName: {eq: "KblShowCase.png"}}) {
@@ -23,6 +29,15 @@ const IndexPage = () => {
   }
 }
   `)
+
+
+  const scrollToSection = () => {
+    scroller.scrollTo(".sneak-peak", {
+      duration: 800,
+      delay: 0,
+      smooth: "easeInOutQuart",
+    });
+  };
 
   return (
     <Layout>
@@ -53,30 +68,34 @@ const IndexPage = () => {
                   Karam Henni
                 </h1>
                 <p className="text-teal-600 text-2xl font-extrabold">
-                  Full Stack web developer
+                  <Trans>Full Stack Web Developer</Trans>
                 </p>
               </div>
             )}
           </Motion>
           <div className="text-center">
-            <a
-              href="#sneak-peak"
+            <ScrollLink
+              to="sneakPeak"
+              spy={true} 
+              smooth={true}
+              duration={500}
               className="block text-black text-lg text-center"
             >
               Discover More
-            </a>
+            </ScrollLink>
 
-            <div className="text-center ArrowButton">
+            <div className="text-center ArrowButton bounce">
               <ArrowDownOutlined />
             </div>
           </div>
         </div>
+        
 
-        <div id="sneak-peak" className="my-12">
-          <p className=" text-4xl font-extrabold text-teal-600 text-center">
-            Have a sneak peek of my work
+        <div id="sneakPeak" className=" h-screen flex items-center flex-col justify-around" >
+          <p className=" text-4xl font-extrabold text-teal-600 text-center mt-12">
+            Have a sneak peek at my work
           </p>
-          <div className="flex justify-around items-center mt-12">
+          <div className="w-full flex justify-around items-center">
             <ProjectCard
               ProjectData={{
                 title: `KBL Car Parts`,
@@ -105,7 +124,7 @@ const IndexPage = () => {
               Tags={[
                 { name: "Laravel", color: "red" },
                 { name: "Javascript", color: "blue" },
-                { name: "ES6", color: "Yellow" },
+                { name: "ES6", color: "lime" },
                 { name: "PHP", color: "pink" },
                 { name: "JQuery", color: "green" },
               ]}
@@ -113,8 +132,8 @@ const IndexPage = () => {
           </div>
 
           <div className="text-center mt-2">
-            <Link to="/Projects" className="block text-black text-lg text-center">
-              -- Browse more projects --{" "}
+            <Link to="/Projects" className="block text-black text-lg text-center bounce">
+              Browse more projects
             </Link>
           </div>
         </div>
