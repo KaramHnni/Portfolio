@@ -17,13 +17,13 @@ export default function Projects({data}){
               Projects
          </p>
 
-         <div div class="mt-4 flex justify-around items-center">
+         <div div class="mt-4 flex justify-around items-center flex-wrap">
            {  
              projects.edges.map(({node}) => {
                return(
                <ProjectCard 
 
-                slug={node.fields.slug}
+              slug={node.fields.slug}
                imageData = {{
                 alt: node.frontmatter.title,
                 path: node.frontmatter.Thumbimage.childImageSharp.fixed.src,

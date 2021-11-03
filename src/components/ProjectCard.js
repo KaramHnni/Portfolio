@@ -4,12 +4,12 @@ import { Card, Avatar, Tag } from "antd"
 
 const { Meta } = Card
 
-const ProjectCard = ({ imageData, ProjectData, Tags , slug }) => {
+const ProjectCard = ({ imageData, ProjectData, Tags, slug }) => {
 
 
 	return (
 		<Card
-			style={{ width: 400 }}
+			style={{ width: 500 , marginTop:30, marginBottom:20}}
 			cover={<img alt={imageData.alt} src={imageData.path} />}
 			actions={[<Link to={slug} >See Details</Link>]}
 					>

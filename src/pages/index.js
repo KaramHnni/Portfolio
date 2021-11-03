@@ -6,25 +6,43 @@ import Image from "../components/image"
 import SEO from "../components/seo"
 import ProjectCard from "../components/ProjectCard"
 import { useStaticQuery, graphql ,Link} from "gatsby"
-import Img from "gatsby-image"
 import { ArrowDownOutlined } from "@ant-design/icons"
-import {Trans, useTranslation} from 'gatsby-plugin-react-i18next';
 
 const IndexPage = () => {
 
-  const { t } = useTranslation();
 
 
   const imgData = useStaticQuery(graphql`
     query Images {
- ImageKBL:  imageSharp(fixed: {originalName: {eq: "KblShowCase.png"}}) {
-    fixed {
-      src
+ ImageKBL:  markdownRemark(frontmatter: {title: {eq: "Kbl Car Parts"}}) {
+  id
+  frontmatter {
+    Thumbimage {
+      childImageSharp {
+        fixed {
+          src
+        }
+      }
     }
   }
-  ImageTipTop:  imageSharp(fixed: {originalName: {eq: "TiptopShowCase.png"}}) {
-    fixed {
-      src
+  fields {
+    slug
+  }
+}
+
+  ImageTipTop:  markdownRemark(frontmatter: {title: {eq: "Tip Top Automobiles CRM"}}) {
+    id
+    frontmatter {
+      Thumbimage {
+        childImageSharp {
+          fixed {
+            src
+          }
+        }
+      }
+    }
+    fields {
+      slug
     }
   }
 }
@@ -68,7 +86,7 @@ const IndexPage = () => {
                   Karam Henni
                 </h1>
                 <p className="text-teal-600 text-2xl font-extrabold">
-                  <Trans>Full Stack Web Developer</Trans>
+                  Full Stack Web Developer
                 </p>
               </div>
             )}
@@ -97,13 +115,14 @@ const IndexPage = () => {
           </p>
           <div className="w-full flex justify-around items-center">
             <ProjectCard
+              slug={imgData.ImageKBL.fields.slug}
               ProjectData={{
                 title: `KBL Car Parts`,
                 description: `E-commerce for car parts`,
               }}
               imageData={{
                 alt: `example`,
-                path: `${imgData.ImageKBL.fixed.src}`,
+                path: `${imgData.ImageKBL.frontmatter.Thumbimage.childImageSharp.fixed.src}`,
               }}
               Tags={[
                 { name: "Laravel", color: "red" },
@@ -117,9 +136,10 @@ const IndexPage = () => {
                 title: `Tip Top Automobiles CRM `,
                 description: `A CRM dedicated to car selling agencies`,
               }}
+              slug={imgData.ImageTipTop.fields.slug}
               imageData={{
                 alt: `example`,
-                path: `${imgData.ImageTipTop.fixed.src}`,
+                path: `${imgData.ImageTipTop.frontmatter.Thumbimage.childImageSharp.fixed.src}`,
               }}
               Tags={[
                 { name: "Laravel", color: "red" },

@@ -1,8 +1,8 @@
 import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { useStaticQuery, graphql } from "gatsby"
-import { Carousel , Descriptions } from 'antd';
+import { graphql } from "gatsby"
+import { Descriptions } from 'antd';
 
 
 
@@ -33,7 +33,7 @@ return (
       >
         <Descriptions.Item label="Project Name">{project.frontmatter.title}</Descriptions.Item>
         <Descriptions.Item label="Added At">{project.frontmatter.date}</Descriptions.Item>
-        <Descriptions.Item label="Job Type">Freelance</Descriptions.Item>
+        <Descriptions.Item label="Job Type">{project.frontmatter.type}</Descriptions.Item>
         <Descriptions.Item label="Technologies">
         <p>
         	{project.frontmatter.tags.map(({name}) => (
@@ -48,30 +48,6 @@ return (
       </Descriptions>
     </div>
 	
-
-         	<div class="my-4">
-			 { project.frontmatter.SliderImg.map(({path}) => (
-
-					
-<p> alt={project.frontmatter.title} src={path.childImageSharp.fluid.src} </p>
-
-
-
-))}
-
-         	<p className="font-bold text-md">Screenshots</p>
-					 <Carousel style={{maxWidth : "100%" , maxHeight:"600px"}} className="bg-black  " autoplay>
-
-			{ project.frontmatter.SliderImg.map(({path}) => (
-
-					
-					  <img alt={project.frontmatter.title} src={path.childImageSharp.fluid.src} className="text-white" />
-			
-					  
-
-					 ))}
-					  </Carousel>
-         	</div>
 
          </div>
 
@@ -90,6 +66,7 @@ export const query =graphql`
 				    frontmatter {
 				    	  title
 				    	  date
+						  type
 				    	  description
 				    	  tags{
 				    	  	name

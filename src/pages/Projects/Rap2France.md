@@ -1,14 +1,13 @@
 ---
 date: "2020-05-20"
-title: "Kbl Car Parts"
-type: "freelance"
+title: "Rap2France"
+type: "Freelance"
 SliderImg : [{path : ../../images/KblShowCase.png} , {path : ../../images/KblShowCase.png},{path : ../../images/KblShowCase.png}]
-Thumbimage : ../../images/KblShowCase.png
+Thumbimage : ../../images/TiptopShowCase.png
 tags : [{ name: "Laravel", color: "red" },
-        { name: "Javascript", color: "blue" },
+        { name: "ReactJS", color: "blue" },
         { name: "PHP", color: "pink" },
-        { name: "JQuery", color: "green" }
+        { name: "API", color: "green" }
         ]
-description : E-commerce for car parts
+description : Remake of the website Rap2France.com
 ---
-

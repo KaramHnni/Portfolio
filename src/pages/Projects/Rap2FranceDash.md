@@ -1,13 +1,14 @@
 ---
 date: "2020-05-20"
-title: "Kbl Car Parts"
+title: "Dash - Rap2France"
+type: "Freelance"
 SliderImg : [{path : ../../images/KblShowCase.png} , {path : ../../images/KblShowCase.png},{path : ../../images/KblShowCase.png}]
 Thumbimage : ../../images/TiptopShowCase.png
 tags : [{ name: "Laravel", color: "red" },
-        { name: "Javascript", color: "blue" },
+        { name: "VueJS", color: "blue" },
         { name: "PHP", color: "pink" },
-        { name: "JQuery", color: "green" }
+        { name: "API", color: "green" }
         ]
-description : E-commerce for car parts
+description : Dashboard & CRM for the website Rap2France
 ---
 

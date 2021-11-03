@@ -59,31 +59,7 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
-    {
-      resolve: `gatsby-plugin-react-i18next`,
-      options: {
-        localeJsonSourceName: `locale`,
-        languages: [`en`, `fr`],
-        defaultLanguage: `en`,
-        siteUrl: `http://localhost:8000/`,
-        i18nextOptions: {
-          interpolation: {
-            escapeValue: false 
-          },
-          keySeparator: false,
-          nsSeparator: false
-        },
-        pages: [
-          {
-            
-          },
-          {
-            matchPath: '/preview',
-            languages: ['en']
-          }
-        ]
-      }
-    },
+    
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

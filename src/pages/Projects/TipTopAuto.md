@@ -1,6 +1,7 @@
 ---
 date: "2020-05-20"
 title: Tip Top Automobiles CRM
+type: "Freelance"
 SliderImg : [{path : ../../images/TiptopShowCase.png} , {path : ../../images/TiptopShowCase.png},{path : ../../images/TiptopShowCase.png}]
 Thumbimage : ../../images/TiptopShowCase.png
 tags : [{ name: "Laravel", color: "red" },
